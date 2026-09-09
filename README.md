@@ -6,6 +6,8 @@
 Анализ посещений и регистраций образовательной платформы.
 Первый этап — загрузка двух CSV и предварительное исследование данных
 в [Jupyter Notebook](data_preparation.ipynb).
+Второй этап в том же notebook — получение посещений и регистраций через API
+за период с `2023-03-01` по `2023-09-01`.
 
 Учебный проект Хекслета: https://ru.hexlet.io/programs/python-for-data-analysts
 
@@ -53,6 +55,13 @@ jupyter notebook data_preparation.ipynb
 
 В аналитическом коде используются только pandas и requests из разрешённого
 списка. Jupyter и nbclient в `requirements-dev.txt` — инструменты запуска notebook.
+
+Раздел «Запросы к API» при каждом выполнении обращается к
+`https://data-charts-api.hexlet.app/visits` и `/registrations` с параметрами
+`begin=2023-03-01` и `end=2023-09-01`. Нужен доступ к интернету.
+Полные данные доступны в `api_visits` и `api_registrations` во время работы ядра.
+В сохранённых выводах notebook находятся первые строки, размеры таблиц и
+фактические диапазоны дат. CSV первого этапа используются отдельно.
 
 ---
 
